@@ -1,5 +1,5 @@
 {
-  "announcement_html": "<h3>公告標題</h3><p>這裡放公告內容。<br>可使用 HTML。<br>例如：版本更新通知、停機公告、下載提醒。</p>",
+  "announcement_html": "<h3>公告標題</h3><p>這裡放公告內容。<br>可使用 HTML。<br>例如：版本更新通知、停機公告、下載提醒         。  </p>",
   "tools": [
     {
       "name": "KNEX",
