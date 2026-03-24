@@ -9,7 +9,7 @@
       "description": "",
       "tutorial_url": "",
       "homepage_url": "https://github.com/jason910727/KNEX-public",
-      "install_subdir": "{version}{name}",
+      "install_subdir": "{name}_v{version}",
       "enabled": true,
       "fallback_version": "",
       "fallback_download_url": ""
@@ -22,7 +22,7 @@
       "description": "",
       "tutorial_url": "",
       "homepage_url": "https://github.com/jason910727/PDFE-public",
-      "install_subdir": "{version}{name}",
+      "install_subdir": "{name}_v{version}",
       "enabled": true,
       "fallback_version": "",
       "fallback_download_url": ""
@@ -35,7 +35,7 @@
       "description": "",
       "tutorial_url": "",
       "homepage_url": "https://github.com/jason910727/CAUS-public",
-      "install_subdir": "{version}{name}",
+      "install_subdir": "{name}_v{version}",
       "enabled": true,
       "fallback_version": "",
       "fallback_download_url": ""
@@ -48,7 +48,7 @@
       "description": "",
       "tutorial_url": "",
       "homepage_url": "https://github.com/jason910727/IGRA-public",
-      "install_subdir": "{version}{name}",
+      "install_subdir": "{name}_v{version}",
       "enabled": true,
       "fallback_version": "",
       "fallback_download_url": ""
