@@ -70,10 +70,10 @@ def run_exe(path: str):
 
 
 def format_install_subdir(template: str, version: str, name: str) -> str:
-    template = template or "{version}{name}"
+    template = template or "{name}_V{version}"
     return (
         template
-        .replace("{version}", f"v{normalize_version(version)}" if version else "")
+        .replace("{version}", normalize_version(version) if version else "")
         .replace("{name}", name)
     )
 

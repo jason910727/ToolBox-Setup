@@ -11,7 +11,7 @@ APP_NAME = "ToolBox"
 APP_VERSION = "1.0.0"
 WINDOW_TITLE = "ToolBox v1.0.0"
 
-MANIFEST_URL = "https://raw.githubusercontent.com/jason910727/ToolBox-Setup/main/manifest"
+MANIFEST_URL = "https://raw.githubusercontent.com/jason910727/ToolBox-Setup/main/manifest.json"
 
 CACHE_DIR = "cache"
 CACHE_FILE = os.path.join(CACHE_DIR, "manifest_cache.json")

@@ -169,12 +169,12 @@ def main():
     tools = parse_tools(manifest, install_dir)
 
     settings = QSettings("KSU-Tools", "ToolBox")
-    win = MainWindow(WINDOW_TITLE, tools, install_dir, manifest, settings)
+    win = MainWindow(WINDOW_TITLE, tools, install_dir, manifest, MANIFEST_URL)
     win.resize(WINDOW_WIDTH, WINDOW_HEIGHT)
     win.show()
 
     sys.exit(app.exec_())
-
+	
 
 if __name__ == "__main__":
     main()

@@ -18,16 +18,22 @@ from PyQt5.QtWidgets import (
 from widgets import ToolCard
 from utils import open_path, open_url, run_exe, compare_versions, format_install_subdir
 from updater import DownloadWorker
+from api import fetch_manifest, github_latest_release
+from cache import save_cache
+from models import ToolItem
+from config import CACHE_FILE
 
 
 class MainWindow(QMainWindow):
-    def __init__(self, app_title, tools, install_dir, manifest, settings):
+    def __init__(self, app_title, tools, install_dir, manifest, manifest_url):
         super().__init__()
         self.app_title = app_title
         self.tools = tools
         self.install_dir = install_dir
         self.manifest = manifest
-        self.settings = settings
+        # self.settings = settings
+        self.manifest_url = manifest_url
+
         self.download_workers = []
         self.tool_cards = {}
 
@@ -68,6 +74,72 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.page_settings)
 
         self.nav.setCurrentRow(0)
+    def reload_from_remote(self):
+        new_manifest = fetch_manifest(self.manifest_url)
+        if not new_manifest:
+            QMessageBox.warning(self, "錯誤", "無法重新抓取遠端 manifest。")
+            return
+
+        self.manifest = new_manifest
+        save_cache(CACHE_FILE, new_manifest)
+
+        self.reload_tools_from_manifest()
+        self._load_data_to_ui()
+        QMessageBox.information(self, "完成", "已重新載入遠端資料。")
+
+    def reload_tools_from_manifest(self):
+        new_tools = []
+
+        for item in self.manifest.get("tools", []):
+            tool = ToolItem(
+                name=item["name"],
+                repo_owner=item["repo_owner"],
+                repo_name=item["repo_name"],
+                exe_name=item["exe_name"],
+                description=item.get("description", ""),
+                tutorial_url=item.get("tutorial_url", ""),
+                homepage_url=item.get("homepage_url", ""),
+                enabled=item.get("enabled", True),
+                install_subdir=item.get("install_subdir", "{version}{name}")
+            )
+
+            try:
+                rel = github_latest_release(tool.repo_owner, tool.repo_name)
+                tag = str(rel.get("tag_name", "")).lstrip("v")
+                assets = rel.get("assets", [])
+
+                tool.latest_version = tag
+                tool.latest_download_url = ""
+
+                for a in assets:
+                    asset_name = a.get("name", "")
+                    if asset_name.lower() == tool.exe_name.lower():
+                        tool.latest_download_url = a.get("browser_download_url", "")
+                        break
+
+                if not tool.latest_download_url:
+                    for a in assets:
+                        asset_name = a.get("name", "")
+                        if asset_name.lower().endswith(".exe"):
+                            tool.latest_download_url = a.get("browser_download_url", "")
+                            break
+
+                if not tool.latest_download_url and assets:
+                    tool.latest_download_url = assets[0].get("browser_download_url", "")
+
+            except Exception:
+                tool.latest_version = ""
+                tool.latest_download_url = ""
+
+            old_tool = next((t for t in self.tools if t.name == tool.name), None)
+            if old_tool:
+                tool.installed_version = old_tool.installed_version
+                tool.installed_path = old_tool.installed_path
+                tool.status_text = old_tool.status_text
+
+            new_tools.append(tool)
+
+        self.tools = new_tools
 
     def _apply_styles(self):
         self.setStyleSheet("""
@@ -136,7 +208,7 @@ class MainWindow(QMainWindow):
         self.btn_update_all = QPushButton("更新全部")
         self.btn_open_install_dir = QPushButton("開啟下載資料夾")
 
-        self.btn_refresh.clicked.connect(self.refresh_cards)
+        self.btn_refresh.clicked.connect(self.reload_from_remote)
         self.btn_update_all.clicked.connect(self.update_all_tools)
         self.btn_open_install_dir.clicked.connect(lambda: open_path(self.install_dir))
 
@@ -250,7 +322,8 @@ class MainWindow(QMainWindow):
         self._fill_update_table()
 
         ann_html = self.manifest.get("announcement_html", "")
-        self.txt_announcement.setHtml(ann_html or "<h3>公告模板</h3><p>請在 manifest 裡填寫 announcement_html。</p>")
+        print("UI announcement_html =", ann_html)
+        self.txt_announcement.setHtml(ann_html or "<h3>目前沒有公告</h3>")
 
     def _fill_cards(self):
         for i in reversed(range(self.home_grid.count())):
