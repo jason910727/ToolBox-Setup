@@ -10,7 +10,7 @@ from dataclasses import dataclass
 
 @dataclass
 class ToolItem:
-    name: str
+    name: str 
     repo_owner: str
     repo_name: str
     exe_name: str
