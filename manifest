@@ -1,36 +1,57 @@
 {
+  "announcement_html": "<h3>公告標題</h3><p>這裡放公告內容。<br>可使用 HTML。<br>例如：版本更新通知、停機公告、下載提醒。</p>",
   "tools": [
     {
       "name": "KNEX",
-      "version": "1.0.0",
-      "exe": "KNEX.exe",
-      "description": "競賽工具",
-      "download": "https://github.com/KNEX-public/KNEX/releases/latest/download/KNEX.exe",
-      "tutorial": "https://yoursite.com/igra"
+      "repo_owner": "jason910727",
+      "repo_name": "KNEX-public",
+      "exe_name": "KNEX.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/KNEX-public",
+      "install_subdir": "{version}{name}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
     },
     {
       "name": "PDFE",
-      "version": "1.2.0",
-      "exe": "PDFE.exe",
-      "description": "PDF工具",
-      "download": "https://github.com/PDFE-public/PDFE/releases/latest/download/PDFE.exe",
-      "tutorial": "https://yoursite.com/igra"
+      "repo_owner": "jason910727",
+      "repo_name": "PDFE-public",
+      "exe_name": "PDFE.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/PDFE-public",
+      "install_subdir": "{version}{name}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
     },
     {
       "name": "CAUS",
-      "version": "1.1.0",
-      "exe": "CAUS.exe",
-      "description": "上傳系統",
-      "download": "https://github.com/CAUS-public/CAUS/releases/latest/download/CAUS.exe",
-      "tutorial": "https://yoursite.com/igra"
+      "repo_owner": "jason910727",
+      "repo_name": "CAUS-public",
+      "exe_name": "CAUS.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/CAUS-public",
+      "install_subdir": "{version}{name}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
     },
     {
       "name": "IGRA",
-      "version": "1.0.0",
-      "exe": "IGRA.exe",
-      "description": "自動化工具",
-      "download": "https://github.com/IGRA-public/IGRA/releases/latest/download/IGRA.exe",
-      "tutorial": "https://yoursite.com/igra"
+      "repo_owner": "jason910727",
+      "repo_name": "IGRA-public",
+      "exe_name": "IGRA.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/IGRA-public",
+      "install_subdir": "{version}{name}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
     }
   ]
 }
