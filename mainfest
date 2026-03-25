@@ -1,0 +1,57 @@
+{
+  "announcement_html": "你456655估馬",
+  "tools": [
+    {
+      "name": "KNEX",
+      "repo_owner": "jason910727",
+      "repo_name": "KNEX-public",
+      "exe_name": "KNEX.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/KNEX-public",
+      "install_subdir": "{name}_v{version}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
+    },
+    {
+      "name": "PDFE",
+      "repo_owner": "jason910727",
+      "repo_name": "PDFE-public",
+      "exe_name": "PDFE.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/PDFE-public",
+      "install_subdir": "{name}_v{version}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
+    },
+    {
+      "name": "CAUS",
+      "repo_owner": "jason910727",
+      "repo_name": "CAUS-public",
+      "exe_name": "CAUS.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/CAUS-public",
+      "install_subdir": "{name}_v{version}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
+    },
+    {
+      "name": "IGRA",
+      "repo_owner": "jason910727",
+      "repo_name": "IGRA-public",
+      "exe_name": "IGRA.exe",
+      "description": "",
+      "tutorial_url": "",
+      "homepage_url": "https://github.com/jason910727/IGRA-public",
+      "install_subdir": "{name}_v{version}",
+      "enabled": true,
+      "fallback_version": "",
+      "fallback_download_url": ""
+    }
+  ]
+}
