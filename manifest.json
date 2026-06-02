@@ -1,57 +1,49 @@
 {
-  "announcement_html": "假八甲八",
-  "tools": [
-    {
-      "name": "KNEX",
-      "repo_owner": "jason910727",
-      "repo_name": "KNEX-public",
-      "exe_name": "KNEX.exe",
-      "description": "",
-      "tutorial_url": "",
-      "homepage_url": "https://github.com/jason910727/KNEX-public",
-      "install_subdir": "{name}_v{version}",
-      "enabled": true,
-      "fallback_version": "",
-      "fallback_download_url": ""
-    },
-    {
-      "name": "PDFE",
-      "repo_owner": "jason910727",
-      "repo_name": "PDFE-public",
-      "exe_name": "PDFE.exe",
-      "description": "",
-      "tutorial_url": "",
-      "homepage_url": "https://github.com/jason910727/PDFE-public",
-      "install_subdir": "{name}_v{version}",
-      "enabled": true,
-      "fallback_version": "",
-      "fallback_download_url": ""
-    },
-    {
-      "name": "CAUS",
-      "repo_owner": "jason910727",
-      "repo_name": "CAUS-public",
-      "exe_name": "CAUS.exe",
-      "description": "",
-      "tutorial_url": "",
-      "homepage_url": "https://github.com/jason910727/CAUS-public",
-      "install_subdir": "{name}_v{version}",
-      "enabled": true,
-      "fallback_version": "",
-      "fallback_download_url": ""
-    },
-    {
-      "name": "IGRA",
-      "repo_owner": "jason910727",
-      "repo_name": "IGRA-public",
-      "exe_name": "IGRA.exe",
-      "description": "",
-      "tutorial_url": "",
-      "homepage_url": "https://github.com/jason910727/IGRA-public",
-      "install_subdir": "{name}_v{version}",
-      "enabled": true,
-      "fallback_version": "",
-      "fallback_download_url": ""
-    }
-  ]
+"announcement_html": "<h3>ToolBox 公告</h3><p>工具資料由 GitHub manifest.json 管理。系統每 5 分鐘會偵測一次遠端資料是否更新；若偵測到公告或工具清單更新，請按「重新整理 / 重新讀取 GitHub」。</p><p style='color:#666;'>提醒：GitHub raw 可能有快取延遲，通常約數分鐘後才會同步到所有電腦。</p>",
+"tools": [
+{
+"name": "PDFE",
+"repo_owner": "jason910727",
+"repo_name": "PDFE-public",
+"exe_name": "PDFE.exe",
+"description": "<h3>PDFE｜PDF 文件處理工具</h3><p>PDFE 是給辦公室日常 PDF 作業使用的整合工具，主要用於 PDF 分割、合併、遮蓋、頁面管理，以及特定行政文件的快速處理。</p><h4>主要功能</h4><ul><li>多段切割：可將同一份 PDF 依頁碼區間切成多份檔案。</li><li>頁面管理：可檢視 PDF 頁面並進行頁面相關處理。</li><li>分割 / 合併：支援常用 PDF 拆分與合併作業。</li><li>遮蓋：可針對 PDF 內容進行遮蓋處理，適合處理需要保護資料的文件。</li><li>通報表、合約書、經費表、核定公文、展延申請表、保留款申請表、預算控制表等快捷作業。</li><li>競賽文件處理：支援競賽申請表輸出路徑規則，並可搭配 OCR 辨識案號。</li><li>路徑自動建立：若預設資料夾不存在，會引導使用者選擇位置並記住設定。</li><li>OCR 支援：可自動尋找 Tesseract OCR，找不到時可手動指定 tesseract.exe。</li></ul><h4>適用情境</h4><p>適合處理掃描 PDF、行政申請文件、競賽相關文件、需要分頁命名或固定路徑輸出的 PDF 作業。</p><h4>注意事項</h4><ul><li>若要使用競賽案號 OCR 功能，電腦需安裝或指定 Tesseract OCR。</li><li>PDFE 若以 zip 包發布，請確認壓縮檔內含 PDFE.exe 及必要附檔。</li><li>部分功能會依辦公室預設資料夾路徑運作，第一次使用時可能需要選擇儲存位置。</li></ul>",
+"tutorial_url": "",
+"homepage_url": "https://github.com/jason910727/PDFE-public",
+"install_subdir": "{name}_v{version}",
+"enabled": true
+},
+{
+"name": "CAUS",
+"repo_owner": "jason910727",
+"repo_name": "CAUS-public",
+"exe_name": "CAUS.exe",
+"description": "<h3>CAUS｜競賽申請表上傳輔助工具</h3><p>CAUS 是用於競賽申請表與附件上傳流程的自動化工具，可協助整理待上傳檔案、檢查檔名格式，並透過 Selenium 執行網站登入與上傳作業。</p><h4>主要功能</h4><ul><li>競賽申請表批次整理與上傳。</li><li>支援申請表 PDF 檔名格式檢查，例如 yyyymm-nnnn.pdf。</li><li>可顯示有效 / 無效檔案，降低上傳前的人工作業錯誤。</li><li>支援檔案順序調整、刪除與清單管理。</li><li>可儲存預設帳密，減少重複登入輸入。</li><li>自動登入指定系統並依序上傳檔案。</li><li>強化 Selenium 點擊與等待流程，降低網頁元件刷新造成的 StaleElementReference 錯誤。</li><li>提供更新檢查與下載更新功能。</li></ul><h4>適用情境</h4><p>適合大量競賽申請表、附件或固定格式 PDF 檔需要批次上傳時使用，可減少重複人工操作。</p><h4>注意事項</h4><ul><li>使用前請確認網路、Chrome / WebDriver 環境正常。</li><li>若網站驗證碼或登入流程變動，可能需要人工輸入或等待程式更新。</li><li>帳密僅儲存在本機設定中，請避免在共用電腦上任意保存私人帳密。</li></ul>",
+"tutorial_url": "",
+"homepage_url": "https://github.com/jason910727/CAUS-public",
+"install_subdir": "{name}_v{version}",
+"enabled": true
+},
+{
+"name": "KNEX",
+"repo_owner": "jason910727",
+"repo_name": "KNEX-public",
+"exe_name": "KNEX.exe",
+"description": "<h3>KNEX｜KSU 焦點新聞爬蟲工具</h3><p>KNEX 是用於崑山科技大學焦點新聞資料整理的爬蟲工具，可依日期區間抓取新聞列表、詳文內容、圖片，並輸出成 Excel 或 Word 文件。</p><h4>主要功能</h4><ul><li>依指定日期範圍抓取 KSU 焦點新聞。</li><li>自動解析新聞標題、日期、網址與文章 ID。</li><li>支援詳文內容抓取與圖片下載。</li><li>可輸出 summary.xlsx，方便後續整理與檢查。</li><li>可產生成果亮點 Word 文件。</li><li>提供失敗詳情檢視，方便追蹤哪些文章或圖片抓取失敗。</li><li>內建重試、錯誤頁判斷與安全檔名處理。</li><li>支援 GitHub Release 更新檢查。</li></ul><h4>適用情境</h4><p>適合需要整理校網焦點新聞、成果亮點、新聞圖片與報告資料時使用。</p><h4>注意事項</h4><ul><li>部分新聞詳文可能由前端動態載入，若網站結構變更，可能需要更新爬蟲規則。</li><li>大量抓取時請保留合理間隔，避免網站負擔過高。</li><li>若圖片或詳文抓取失敗，可透過失敗詳情確認原因。</li></ul>",
+"tutorial_url": "",
+"homepage_url": "https://github.com/jason910727/KNEX-public",
+"install_subdir": "{name}_v{version}",
+"enabled": true
+},
+{
+"name": "IGRA",
+"repo_owner": "jason910727",
+"repo_name": "IGRA-public",
+"exe_name": "IGRA.exe",
+"description": "<h3>IGRA｜KSU EIP 研究計畫資料輔助工具</h3><p>IGRA 是用於 KSU EIP 研究計畫相關資料下載、整理與批次處理的輔助工具，可協助使用者登入系統、讀取 Excel 清單、下載指定資料，並依案號或計畫資訊整理檔案。</p><h4>主要功能</h4><ul><li>支援讀取 Excel 範本與批次資料。</li><li>可下載內建 Excel 範本，方便使用者整理待處理資料。</li><li>支援預設帳密儲存與清除，減少重複登入輸入。</li><li>透過 Selenium 自動登入並執行指定下載流程。</li><li>可依計畫案號、案名或指定欄位建立資料夾與重新命名檔案。</li><li>支援下載全部或指定資料。</li><li>提供進度顯示、狀態提示與基本錯誤處理。</li><li>內建 GitHub Release 更新檢查與下載更新功能。</li></ul><h4>適用情境</h4><p>適合處理 KSU EIP 研究計畫資料、附件下載、案號資料整理，以及需要大量重複下載與改名的行政作業。</p><h4>注意事項</h4><ul><li>使用前請確認 Chrome / WebDriver 可正常運作。</li><li>若 EIP 網頁欄位、按鈕或流程變更，可能需要更新程式。</li><li>帳密會儲存在本機設定，請避免在不受信任的電腦保存帳密。</li></ul>",
+"tutorial_url": "",
+"homepage_url": "https://github.com/jason910727/IGRA-public",
+"install_subdir": "{name}_v{version}",
+"enabled": true
+}
+]
 }
